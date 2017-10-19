@@ -1,0 +1,125 @@
+.selected {
+    background-color: #BBD8DC !important;
+    color: white;
+}
+
+h1 a {
+    margin-top: -6px;
+    margin-left: 55px;
+}
+
+.heroes {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: 15em;
+}
+
+.heroes li .heroName {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.heroes li {
+    cursor: pointer;
+    position: relative;
+    background-color: #EEE;
+    margin: .5em;
+    padding: .3em 0;
+    height: 26px;
+    width: 260px;
+    border-radius: 4px;
+}
+
+.heroes li:hover {
+    color: #607D8B;
+    background-color: #DDD;
+    left: .1em;
+}
+
+.heroes li.selected:hover {
+    background-color: #BBD8DC !important;
+    color: white;
+}
+
+.heroes .badge {
+    display: inline-block;
+    font-size: 10px;
+    color: white;
+    padding: 0.8em 0.7em 0 0.7em;
+    background-color: #629cb8;
+    line-height: 1em;
+    position: relative;
+    padding-top: 9px;
+    left: -1px;
+    top: -4.0px;
+    height: 26px;
+    width: 25px;
+    margin-right: .8em;
+    border-radius: 4px 0 0 4px;
+}
+
+
+/* .heroes .span {
+    text-align: center;
+    border: 3px solid green;
+} */
+
+button.delete {
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+
+/* button:hover {
+    background-color: #cfd8dc;
+} */
+
+button.delete {
+    float: right;
+    margin-top: -4.4px;
+    padding-top: 2px;
+    height: 26px;
+    background-color: gray !important;
+    color: white;
+}
+
+input.check {
+    float: right;
+    padding-top: 1px;
+    margin-top: -3.7px;
+    color: rgb(233, 33, 33);
+    font-family: Arial;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+}
+
+.row.content {
+    height: auto;
+}
+
+
+/* Set gray background color and 100% height */
+
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+    margin-bottom: 0px;
+}
+
+
+/*
+  Copyright 2017 Google Inc. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at http://angular.io/license
+  */

@@ -1,0 +1,72 @@
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h2><label>Hero Detail</label></h2>
+            <hr>
+            <div *ngIf="hero">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <h1>
+                            <span class="badge">
+                              <i class="fa fa-id-card fa-4x" aria-hidden="true"> {{hero.name}} :</i>
+                            </span>
+                        </h1>
+                    </div>
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <br>
+                        <h5 *ngIf="hero.gender === 'Female'; else Block">
+                            &nbsp;<i class="fa fa-male fa-2x" aria-hidden="true"> {{hero.gender}}</i>
+                        </h5>
+                        <ng-template #Block>
+                            <h5>
+                                <i class="fa fa-female fa-2x" aria-hidden="true"> {{hero.gender}}</i>
+                            </h5>
+                        </ng-template>
+                        <br>
+                        <h5>
+                            <i class="fa fa-birthday-cake fa-2x" aria-hidden="true"> Birthday : {{hero.birthday | date}}  </i>
+                        </h5>
+                    </div>
+                </div>
+                <br>
+                <div class="col-sm-1">
+                    <h4>
+                        <span class="badge"> INFO :</span>
+                    </h4>
+                </div>
+                <div class="col-sm-11">
+                    <p class="contentInfo">{{hero.info}}</p>
+                </div>
+                <div class="form-group col-sm-offset-10">
+                    <a class="btn btn-primary" type="button" (click)="gotoDetail()">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                        <!-- <app-edit-hero [editHero]="hero">Loading...</app-edit-hero> -->
+                    </a>
+                    <button class="btn btn-danger" data-toggle="modal" data-target="#deleteHero">
+                        <i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Popup Delete -->
+<div class="modal fade" id="deleteHero" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>This is a small modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="delete(hero)">Delete</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Popup  -->

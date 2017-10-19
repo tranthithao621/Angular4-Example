@@ -1,0 +1,60 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="content">
+                        <a routerLink="/heroes" class="btn btn-primary"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back To Heroes</a>
+                        <div class="page-title">
+                            <h3 class="title">Edit New Hero</h3>
+                        </div>
+                        <hr>
+                        <form #editForm="ngForm">
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label>
+                                        <span class="title">Hero Name*:</span>
+                                    </label>
+                                </div>
+                                <input class="form-control" name="hero-name" required type="text" [(ngModel)]="hero.name" #name="ngModel" [ngClass]="{'has-danger': name.invalid && (name.dirty || name.touched),
+                                    'has-success': name.valid && (name.dirty || name.touched)}">
+                                <div *ngIf="name.invalid && name.touched" class="form-group has-error has-feedback">
+                                    <span class="label label-danger">Enter your Hero Name</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="Male" [(ngModel)]="hero.gender" #gender="ngModel">Male
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="optradio" value="Female" [(ngModel)]="hero.gender" #gender="ngModel">Female
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label><span class="title">BirthDay:</span></label>
+                                </div>
+                                <input useValueAsDate class="form-control" name="hero-birthday" type="date" datetime="yyyy-MM-dd" [(ngModel)]="hero.birthday" #birthday="ngModel" [ngClass]="{'has-success': birthday.valid && (birthday.dirty || birthday.touched)}">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <label><span class="title">Info:</span></label>
+                                </div>
+                                <textarea rows="5" class="form-control" name="hero-info" [(ngModel)]="hero.info" #info="ngModel" [ngClass]="{'has-success': info.valid && (info.dirty || info.touched)}"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-group group-button col-md-offset-4" style="margin-left: 260px;">
+                                    <button type="submit" class="btn btn-labeled btn-primary" (click)="editHero(editForm)" [disabled]="editForm.invalid"><span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Edit</button>&nbsp;
+                                    <button type="reset" class="btn btn-labeled btn-wangring"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

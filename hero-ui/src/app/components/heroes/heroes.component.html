@@ -1,0 +1,69 @@
+<br>
+<!-- Template -->
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-3">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="form-group">
+                            <h1>Heroes <a type="button" routerLink="/addhero" class="btn btn-primary"> Add Hero</a></h1>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <br>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <div class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="glyphicon glyphicon-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="heroes col-offset-1">
+                            <ul class="nav">
+                                <div class="form-group" *ngFor="let hero of heroes">
+                                    <li (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+                                        <span class="badge"><i class="fa fa-superpowers" aria-hidden="true"></i></span>
+                                        <span class="heroName">{{hero.name}}</span>
+                                        <span class="heroName">{{hero.birthday}}</span>
+                                        <!-- <button class="delete" data-toggle="modal" data-target="#deleteHero">x</button> -->
+                                        <input type="checkbox" class="check" value="">
+                                    </li>
+                                </div>
+                                <div class="col-sm-offset-4">
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#deleteHeroes"> <i class="fa fa-trash-o" aria-hidden="true"> Delete Heroes</i></button>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <app-hero-detail [hero]="selectedHero">Loading detail...</app-hero-detail>
+        </div>
+    </div>
+</div>
+
+<!-- End Template -->
+<!-- Popup Delete -->
+<div class="modal fade" id="deleteHero" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>This is a small modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="delete(selectedHero)">Delete</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Popup  -->

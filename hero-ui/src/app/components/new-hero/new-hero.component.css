@@ -1,0 +1,32 @@
+.has-success {
+    /* border-color: #5cb85c; */
+    border: 1px solid #5cb85c;
+}
+
+.has-danger {
+    /* border-color: #d9534f; */
+    border: 1px solid #d9534f;
+    box-shadow: none;
+}
+
+.btn span.glyphicon {
+    opacity: 0;
+}
+
+.btn.active span.glyphicon {
+    opacity: 1;
+}
+
+.btn-label {
+    position: relative;
+    left: -12px;
+    display: inline-block;
+    padding: 6px 8px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 3px 0 0 3px;
+}
+
+.btn-labeled {
+    padding-top: 0;
+    padding-bottom: 0;
+}
